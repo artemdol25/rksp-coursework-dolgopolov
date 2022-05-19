@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const graphqlHTTP = require('express-graphql').graphqlHTTP;
@@ -8,6 +9,9 @@ const graphQlResolvers = require('./graphql/resolvers/index');
 const isAuth = require('./middleware/is-auth');
 
 const app = express();
+
+const port = process.env.PORT || 8000;
+const mongodbUri = process.env.MONGODB_URI || 'mongodb+srv://artemdol:4sAZ1emHfSsUHkr0@cluster0.l6zpr.mongodb.net/events-react-dev?retryWrites=true&w=majority';
 
 app.use(bodyParser.json());
 
@@ -32,12 +36,9 @@ app.use(
     })
 );
 
-mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${
-    process.env.MONGO_PASSWORD
-}@cluster0.l6zpr.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`
-)
+mongoose.connect(mongodbUri)
 .then(() => {
-    app.listen(8000);
+    app.listen(port);
 })
 .catch(err => {
     console.log(err);
