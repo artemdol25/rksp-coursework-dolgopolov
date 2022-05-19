@@ -10,7 +10,8 @@ const mainNavigation = props => (
       return (
         <header className="main-navigation">
           <div className="main-navigation__logo">
-            <h1>СИСТЕМА</h1>
+            <h1>Система для онлайн-записи на мероприятия</h1>
+            <h4>Долгополов Артём, ИКБО-02-19</h4>
           </div>
           <nav className="main-navigation__items">
             <ul>

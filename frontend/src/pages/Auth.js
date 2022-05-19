@@ -95,9 +95,9 @@ class AuthPage extends Component {
           <input type="password" id="password" ref={this.passwordEl} />
         </div>
         <div className="form-actions">
-          <button type="submit">Войти</button>
+          <button type="submit">Подтвердить</button>
           <button type="button" onClick={this.switchModeHandler}>
-            {this.state.isLogin ? 'Регистрация' : 'Вход'}
+            {this.state.isLogin ? 'Перейти к регистрации' : 'Перейти к авторизации'}
           </button>
         </div>
       </form>
