@@ -173,6 +173,7 @@ componentDidMount() {
       this.setState({ selectedEvent: null });
       return;
     }
+    console.log(this.state.selectedEvent)
     const requestBody = {
       query: `
           mutation BookEvent($id: ID!) {
